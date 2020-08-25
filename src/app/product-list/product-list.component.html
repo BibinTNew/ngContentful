@@ -1,0 +1,22 @@
+<div class="bg-dark" style="color: white; "> <h3>&nbsp;&nbsp;&nbsp; Products... </h3> <br></div>
+<div>
+    <div class="alert  bg-white jumbotron" role="alert" *ngFor="let product of products ">
+      <span>
+        <div class="d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap bg-warning" >
+          <div class="p-2">
+              <a href="{{product.fields.url }}" target="_blank">
+                  <img src="{{ product.fields.productImage.fields.file.url }}" class="rounded" width="150"/>
+              </a>
+          </div>
+          <div class="p-2">
+            <h5 class="alert-heading"><a href="{{ product.fields.url }}" target="_blank">{{ product.fields.title}}</a></h5>
+            <p><b>{{ product.fields.shortText }}</b></p>
+            <div>{{ product.fields.description }}</div>
+            <a href="{{ product.fields.url }}" target="_blank" class="btn btn-success bg-dark">Go To product</a>
+            &nbsp;
+            <button (click)="goToProductDetailsPage(product.sys.id)" class="btn btn-info bg-dark" >product Details</button>
+          </div>
+        </div>
+      </span>
+      </div>
+  </div>  

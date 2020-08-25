@@ -1,0 +1,29 @@
+<div class="bg-dark" style="color: white; "> <h3>&nbsp;&nbsp;&nbsp; Product Explorer</h3> <br></div>
+<div *ngIf="product" class="jumbotron">
+  <div class="bg-warning">
+    <h2><a href="{{ product.fields.url }}" target="_blank">{{ product.fields.title }}</a></h2>
+    <br><br>
+    <i>-- {{ product.fields.shortText }}</i>
+  </div>
+  <div>
+    <img src="{{product.fields.detailImage.fields.file.url}} " width = 100% height =20%>
+  </div>
+<div>
+  <a href="{{ product.fields.url }}" target="_blank"><img width="40%" style="margin: 10px" class="float-right rounded"
+    src="{{product.fields.productImage.fields.file.url}}"></a>
+
+    <br><br>
+    <div><p><b>{{ product.fields.description }}</b></p></div>
+    <br><br>
+
+    <div [innerHTML]="product.fields.longDescription| mdToHtml"> </div>
+    <div class="bg-secondary">
+      <br>
+      &nbsp;&nbsp;
+    <a href="{{ product.fields.url }}" target="_blank" class="btn btn-success">Go To product</a>
+    &nbsp;&nbsp;
+        <button (click)="goToList()" class="btn btn-danger">Back To List</button>
+    <br><br>
+    </div>
+    
+  </div>
